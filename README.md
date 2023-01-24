@@ -15,9 +15,9 @@
 
 
 ## Participantes
-**Ariana Alvarado - aalvarador8@unemi.edu.ec** ©
-**Jordy Pincay - pincaym7@unemi.edu.ec** ©
-**Joffre Baquerizo - jbaquerizol3@unemi.edu.ec** ©
-**Frank Borja - fborjaz@unemi.edu.ec** ©
+- **Ariana Alvarado - aalvarador8@unemi.edu.ec** ©
+- **Jordy Pincay - pincaym7@unemi.edu.ec** ©
+- **Joffre Baquerizo - jbaquerizol3@unemi.edu.ec** ©
+- **Frank Borja - fborjaz@unemi.edu.ec** ©
 
 
