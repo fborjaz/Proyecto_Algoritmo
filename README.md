@@ -9,7 +9,9 @@
 
 ## Sub Menu
 
-1. arreglo submenu numeros
+1. arreglo submenu Numeros
+2. Arrelo submenu Cadenas
+3. Arrelo submenu Arreglos
 
 
 
