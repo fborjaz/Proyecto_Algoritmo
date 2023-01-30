@@ -340,18 +340,17 @@ FinFuncion
 //Funcion Indicar si una palabra es Palindroma
 Funcion PalabraPalindroma()
 	Definir nombre, inversa Como Caracter;
-	Definir l, pos Como Entero;
+	Definir pos Como Entero;
 	Escribir "Ingresar un nombre";
 	Leer nombre;
-	l = Longitud(nombre);
-	Para pos = l-1 Hasta 0 Con Paso -1 Hacer
-		inversa = inversa + Subcadena(nombre,l,l);
+	Para pos=longitud(nombre) Hasta 0 Con Paso -1 Hacer
+		inversa = inversa + Subcadena(nombre,pos,pos);
 	Fin Para
 	Escribir inversa;
-	Si nombre = inversa Entonces
-		Escribir "La palabra es palindroma";
+	Si inversa = nombre Entonces
+		Escribir "La palabra al derecho y al Reves es palindroma";
 	SiNo
-		Escribir "La palabra no es palindoroma";
+		Escribir "No se escribe de igual forma al derecho y al Reves, por lo tanto no es palindroma";
 	FinSi
 FinFuncion
 
