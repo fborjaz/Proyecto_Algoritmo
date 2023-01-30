@@ -1,282 +1,297 @@
 // Funciones o SubAlgoritmo  del proyecto
 // SubAlgoritmo menus del proyecto
-Funcion opcion=presentarMenu(titulo,menu,lim)
-	Definir opcion Como Caracter
-	Definir pos Como Entero
-	Borrar Pantalla
-	Escribir titulo
+Funcion opcion = presentarMenu(titulo,menu,lim)
+	Definir opcion Como Caracter;
+	Definir pos Como Entero;
+	Borrar Pantalla;
+	Escribir titulo;
 	Para pos=0 Hasta lim-1 Con Paso 1 Hacer
-		Escribir menu[pos]
+		Escribir menu[pos];
 	Fin Para
-	Escribir "       Elija opci?n[1..",lim,"]" Sin Saltar
-	leer opcion
+	Escribir "       Elija opci?n[1..",lim,"]" Sin Saltar;
+	leer opcion;
 FinFuncion
-///ARREGLO SUBMENU NUMEROS
+/// ARREGLO SUBMENU NUMEROS
 // Pide dos numeros y presenta el mayor de los dos
 Funcion mayorDosNumeros()
-	Definir num1,num2 Como Entero
-	Escribir "Ingrese numero1"
-	leer num1
-	Escribir "Ingrese numero2"
-	leer num2
+	Definir num1,num2 Como Entero;
+	Escribir "Ingrese numero 1: ";
+	leer num1;
+	Escribir "Ingrese numero 2: ";
+	leer num2;
 	Si num1 > num2 Entonces
-		Escribir num1," Es mayor que ",num2
+		Escribir num1," Es mayor que ",num2;
 	SiNo
 		Si num1 < num2 Entonces
-			Escribir num1," Es menor que ",num2
+			Escribir num1," Es menor que ",num2;
 		SiNo
-			Escribir num1," Es igual a ",num2
+			Escribir num1," Es igual a ",num2;
 		Fin Si
 	Fin Si
 FinFuncion
+
 //Funcion Divisi?n de Restas
 Funcion DivisiondeRestas()
-	Definir num1, num2, cociente Como Entero
-	cociente=0
-	Escribir "Ingresar Dos numeros:"
-	Leer num1, num2 
-	Mientras num1>=num2 Hacer
-		num1=num1-num2
-		cociente=cociente+1
+	Definir num1, num2, cociente Como Entero;
+	cociente = 0;
+	Escribir "Ingresar Dos numeros: ";
+	Leer num1, num2;
+	Mientras num1 >= num2 Hacer
+		num1 = num1 - num2;
+		cociente = cociente + 1;
 	FinMientras
-	Escribir "El cociente de la divisi?n es:", " " cociente
-	Escribir "El Restante es:", " " num1 
+	Escribir "El cociente de la divisi?n es: ", " " cociente;
+	Escribir "El Restante es: ", " " num1;
 FinFuncion
+
 //Funcion multplicaci?n de dos numeros por sumas
 Funcion MultiplicacionporSumas() 
-	Definir num1, num2, c, resu Como Entero
-	resu=0
-	Escribir "///////Ingresa Primer Numero///////:"
-	Leer num1
-	Escribir "///////Ingresa Segundo Numero//////:"
-	Leer num2
-	Para c=1 hasta num2 Hacer
-		resu=resu+num1
+	Definir num1, num2, c, resu Como Entero;
+	resu = 0;
+	Escribir "Ingresa Primer Numero: ";
+	Leer num1;
+	Escribir "Ingresa Segundo Numero: ";
+	Leer num2;
+	Para c = 1 hasta num2 Hacer
+		resu = resu + num1;
 	FinPara
-	Escribir "El resultado de la operaci?n es:", " " resu
+	Escribir "El resultado de la operaci?n es: ", " " resu;
 FinFuncion
+
 //Funcion Suma Pares y Productos multiplos de 5 de una secuencia de numeros
 Funcion sumaparesproductomultiplos5()
-	Definir num, sum, producto como entero
-	Sum=0; producto=1;
-	para num=1 Hasta 10 Hacer
-		si num mod 2=0 entonces 
-			sum=sum+num
+	Definir num, sum, producto como entero;
+	Sum = 0; producto = 1;
+	para num = 1 Hasta 10 Hacer
+		si num mod 2 = 0 entonces 
+			sum = sum + num;
 		FinSi
-		Si num mod 5=0 Entonces
-			producto= trunc(producto*num)
+		Si num mod 5 = 0 Entonces
+			producto = trunc(producto * num);
 		FinSi
 	FinPara
-	Escribir "La suma de los pares es:", " " sum
-	Escribir "El producto de los multiplos de 5 es:", " " producto
+	Escribir "La suma de los pares es: ", " " sum;
+	Escribir "El producto de los multiplos de 5 es: ", " " producto;
 FinFuncion
+
 //Funcion cantidad de numeros hasta leer 0
 Funcion cantidaddenumeros()
-	Definir num Como Entero
-	num=1
-	Escribir "Cantidad de Digitos"
-	Mientras num<>0 Hacer
-		Leer num 
+	Definir num Como Entero;
+	num = 1;
+	Escribir "Cantidad de Digitos ";
+	Mientras num <> 0 Hacer
+		Leer num;
 	FinMientras
 FinFuncion
+
 //Funcion sacar iva y total
 Funcion sacarivaytotal()
-	Definir num, des, precio, i Como Entero
-	Definir iva, total Como Real
-	Escribir "?Cuantos trajes llevar??"
-	Leer num 
+	Definir num, des, precio, i Como Entero;
+	Definir iva, total Como Real;
+	Escribir "Cuantos trajes desea llevar";
+	Leer num;
 	Para i=1 hasta num con paso 1 Hacer
-		Escribir "Precio del traje #",i
-		Leer precio
-		des=precio/10
-		iva=(precio-12)*0.12
-		total=precio-des+iva
-		Escribir "El total del traje #",i " " "es:", " " total "$"
+		Escribir "Precio del traje #",i;
+		Leer precio;
+		des = trunc(precio / 10);
+		iva = (precio - 12) * 0.12;
+		total = precio - des + iva;
+		Escribir "El total del traje #",i " " "es:", " " total "$";
 	FinPara
 FinFuncion
+
 //Funcion dado tres numeros indicar si el segundo es el mayor 
 Funcion Dadotresnumeros()
-	Definir n1,n2,n3 como entero 
-	Escribir "Digite tres numeros:"
+	Definir n1,n2,n3 como entero;
+	Escribir "Digite tres numeros: ";
 	Leer n1,n2,n3;
 	Si (n2 > n1) y (n2 > n3) Entonces
-		Escribir "El segundo numero", " " n2 " " "Es mayor" 
+		Escribir "El segundo numero", " " n2 " " "Es mayor";
 	Sino
-		Escribir "El segundo numero", " " n2 " " "No Es mayor"
+		Escribir "El segundo numero", " " n2 " " "No Es mayor";
 	FinSi
 FinFuncion
+
 //Funcion Calcular cantidad de numeros promedio
 Funcion CantidadDeNumerosPromedio()
-	Definir n1,num,suma,r,div Como Real
-	suma=0
-	Escribir "Digite cantidad de numeros:"
-	Leer num 
+	Definir n1,num,suma,r,div Como Real;
+	suma = 0;
+	Escribir "Digite cantidad de numeros:";
+	Leer num;
 	Para r=1 Hasta num con paso 1 Hacer
-		Escribir "Numero #", r 
-		Leer n1
-		suma=n1+suma
+		Escribir "Numero #", r;
+		Leer n1;
+		suma = n1 + suma;
 	FinPara
-	div=(suma/4)
-	Escribir "el promedio general es:", " " div
+	div = (suma / 4);
+	Escribir "el promedio general es:", " " div;
 FinFuncion
+
 //Funcion Para saber si dos Numeros son Amigos, por medio de la suma de los divisores
 Funcion NumerosAmigos()
-	Definir n1, n2, s1, s2, R Como Entero
-	S1=0; s2=0;
-	Escribir "Digite dos numeros:"
+	Definir n1, n2, s1, s2, R Como Entero;
+	s1 = 0; s2 = 0;
+	Escribir "Digite dos numeros:";
 	Leer n1, n2;
-	para R=1 Hasta n1 Hacer
-		si (n1 mod R=0) y (R<>n1) Entonces
-			s1=s1+R
+	para R = 1 Hasta n1 Hacer
+		si (n1 mod R = 0) y (R <> n1) Entonces
+			s1 = s1 + R;
 		FinSi
  	FinPara
-	para R=1 Hasta n2 Hacer
-		si (n2 mod R=0) y (R<>n2) Entonces
-			s2=s2+R
+	para R = 1 Hasta n2 Hacer
+		si (n2 mod R = 0) y (R <> n2) Entonces
+			s2 = s2 + R;
 		FinSi
  	FinPara
-	Si (s1 = s2) y(s2 = s1) Entonces
-		Escribir "Los dos Numeros", " " n1, " " "Y "  n2 " " "Son amigos" 
+	Si (s1 = s2) y (s2 = s1) Entonces
+		Escribir "Los dos Numeros", " " n1, " " "Y "  n2 " " "Son amigos";
 	Sino 
-		Escribir "Los dos Numeros", " " n1, " " "Y "  n2 " " "No son amigos" 
+		Escribir "Los dos Numeros", " " n1, " " "Y "  n2 " " "No son amigos";
 	FinSi
 FinFuncion
+
 // Funciones Primos Gemelos
 Funcion PrimosGemelos()
-	Definir num1, num2, r Como Entero
-	Definir P1, P2 Como Logico
-	P1=Verdadero
-	P2=Verdadero
+	Definir num1, num2, r Como Entero;
+	Definir P1, P2 Como Logico;
+	P1 = Verdadero;
+	P2 = Verdadero;
 	//Leer variables
-	Escribir "Ingresa Dos Numeros:"
+	Escribir "Ingresa Dos Numeros:";
 	Leer num1, num2; 
 	//
-	Para r=2 Hasta raiz(num1) Hacer
-		si num1 mod r=0 Entonces
-			P1=Falso 
+	Para r = 2 Hasta raiz(num1) Hacer
+		si num1 mod r = 0 Entonces
+			P1 = Falso;
 		FinSi
 	FinPara
-	Para r=2 Hasta raiz(num2) Hacer
-		si num2 mod r=0 Entonces
-			P2=Falso 
+	Para r = 2 Hasta raiz(num2) Hacer
+		si num2 mod r = 0 Entonces
+			P2 = Falso;
 		FinSi
 	FinPara
 	//Comprobar
-	Si (P1=Verdadero) y (P2=Verdadero) y (Abs(Num1-Num2)=2) Entonces
-		Escribir "Los numeros son Primos Gemelos"
+	Si (P1 = Verdadero) y (P2 = Verdadero) y (Abs(Num1 - Num2) = 2) Entonces
+		Escribir "Los numeros son Primos Gemelos";
 	SiNo
-		Escribir "Los numeros No son Primos Gemelos"
+		Escribir "Los numeros No son Primos Gemelos";
 	FinSi
 FinFuncion
+
 ///FUNCIONES SUBMENU CADENAS
 //Funcion PRESENTAR UN NOMBRE CARACTER POR CARACTER
 Funcion Caracterporcaracter()
-	Definir frase Como Caracter
-	Definir pos, l Como Entero
-	pos=0; l=0; frase=""
-	Escribir "ingrese un nombre"
-	Leer frase
-	l=Longitud(frase) -1
-	Para pos=0 Hasta l Con Paso 1 Hacer
-		Escribir Subcadena(frase,pos,pos) Sin Saltar
+	Definir frase Como Caracter;
+	Definir pos, l Como Entero;
+	pos = 0; l = 0; frase = "";
+	Escribir "ingrese un nombre ";
+	Leer frase;
+	l = Longitud(frase) -1;
+	Para pos = 0 Hasta l Con Paso 1 Hacer
+		Escribir Subcadena(frase,pos,pos) Sin Saltar;
 	Fin Para
 FinFuncion
+
 //Funcion Presentar el Primero, El Medio y El Ultimo de una Frase
 Funcion PrimeroUltimoMedio()
-	Definir nombre, primero, medio, ultimo Como Caracter
-	definir l, i como entero
-	Escribir "ingrese un nombre"
-	leer nombre
-	l=longitud(nombre)
-	primero= Subcadena(nombre,0,0)
-	medio=Subcadena(nombre,(l-1)/2,(l-1)/2)
-	ultimo= Subcadena(nombre,l-1,l-1)
-	escribir primero
-	escribir medio 
-	escribir ultimo
+	Definir nombre, primero, medio, ultimo Como Caracter;
+	definir l, i como entero;
+	Escribir "ingrese un nombre ";
+	leer nombre;
+	l = longitud(nombre);
+	primero = Subcadena(nombre,0,0);
+	medio = Subcadena(nombre,(l - 1) / 2,(l - 1) / 2);
+	ultimo= Subcadena(nombre,l - 1,l - 1);
+	escribir primero;
+	escribir medio;
+	escribir ultimo;
 FinFuncion
+
 //Funcion Indicar si son Iguales
 Funcion SonIguales()
-	Definir nombre,l, z,nombre2 Como Caracter
-	Escribir "Ingrese dos Nombres:"
-	leer nombre
-	leer nombre2
-	l=minusculas(nombre)
-	z=minusculas(nombre2)
-	si l=z 
-		escribir "Los nombres"," " nombre " " "y" " " nombre2 " " "son iguales"
+	Definir nombre,l, z,nombre2 Como Caracter;
+	Escribir "Ingrese dos Nombres: ";
+	leer nombre;
+	leer nombre2;
+	l = minusculas(nombre);
+	z = minusculas(nombre2);
+	si l = z 
+		Escribir "Los nombres"," " nombre " " "y" " " nombre2 " " "son iguales";
 	sino 
-		Escribir "Los nombres"," " nombre " " "y" " " nombre2 " " "No son iguales"
+		Escribir "Los nombres"," " nombre " " "y" " " nombre2 " " "No son iguales";
 	FinSi
 FinFuncion
+
 //Funcion Indicar cual tiene m?s Longitud
 Funcion MayorLongitud()
-	Definir frase1, frase2 Como Caracter
-	Definir l Como Entero
-	Escribir "Ingrese la primera frase"
-	Leer frase1
-	Escribir "Ingrese la segunda frase"
-	Leer frase2
-	l=longitud(frase1) ; l=longitud(frase2)
-	Si Longitud(frase1) >Longitud(frase2)  Entonces
-		Escribir "La primera frase es la de mayor longitud"
+	Definir frase1, frase2 Como Caracter;
+	Definir l Como Entero;
+	Escribir "Ingrese la primera frase";
+	Leer frase1;
+	Escribir "Ingrese la segunda frase";
+	Leer frase2;
+	l = longitud(frase1) ; l = longitud(frase2);
+	Si Longitud(frase1) > Longitud(frase2) Entonces
+		Escribir "La primera frase es la de mayor longitud";
 	SiNo
 		si Longitud(frase2) > Longitud(frase1) Entonces
-			Escribir "La segunda frase es de mayor longitud"
+			Escribir "La segunda frase es de mayor longitud";
 		FinSi
 	FinSi
 FinFuncion
+
 //Funcion Indicar cuantos puntos y coma hay en una frase
 Funcion PuntoyComa()
-	Definir frase Como Caracter
-	Definir l, pos, ccoma,cpunto,cpuntoycoma,cdospuntos Como Entero
-	pos=0; l=0; ccoma=0; cpunto=0; cpuntoycoma=0; cdospuntos=0;
-	Escribir"Ingrese una frase"
-	Leer frase 
-	l=Longitud(frase)-1
-	Para pos=0 Hasta l Con Paso 1 Hacer
-		Si Subcadena(frase,pos,pos)="," Entonces
-			ccoma=ccoma+1
+	Definir frase Como Caracter;
+	Definir l, pos, ccoma,cpunto,cpuntoycoma,cdospuntos Como Entero;
+	pos = 0; l = 0; ccoma = 0; cpunto = 0; cpuntoycoma = 0; cdospuntos = 0;
+	Escribir"Ingrese una frase: ";
+	Leer frase ;
+	l = Longitud(frase) -1;
+	Para pos = 0 Hasta l Con Paso 1 Hacer
+		Si Subcadena(frase,pos,pos) ="," Entonces
+			ccoma = ccoma + 1;
 		SiNo
-			Si Subcadena(frase,pos,pos)="." Entonces
-				cpunto=cpunto+1
+			Si Subcadena(frase,pos,pos) ="." Entonces
+				cpunto = cpunto+1;
 			SiNo
-				Si Subcadena(frase,pos,pos)=";" Entonces
-					cpuntoycoma=cpuntoycoma+1
+				Si Subcadena(frase,pos,pos) =";" Entonces
+					cpuntoycoma = cpuntoycoma + 1;
 				SiNo
-					Si Subcadena(frase,pos,pos)=":" Entonces
-						cdospuntos=cdospuntos+1
+					Si Subcadena(frase,pos,pos) =":" Entonces
+						cdospuntos = cdospuntos + 1;
 						
 					Fin Si
 				FinSi
 			FinSi
 		FinSi
 	FinPara
-	Escribir "cantidad de coma " ccoma
-	Escribir "cantidad de punto " cpunto
-	Escribir "cantidad de punto y coma " cpuntoycoma
-	Escribir "cantidad de dos puntos " cdospuntos
+	Escribir "cantidad de coma " ccoma;
+	Escribir "cantidad de punto " cpunto;
+	Escribir "cantidad de punto y coma " cpuntoycoma;
+	Escribir "cantidad de dos puntos " cdospuntos;
 FinFuncion
+
 //Funcion Dado una cadena Indicar cuantas vocales, consonantes y Digitos hay 
 Funcion VocalesConsonantesDigitos()
-	Definir frase, frasemin Como Caracter
+	Definir frase, frasemin Como Caracter;
 	Definir l, vocales, consonan, digitos, pos,vacio Como Entero;
-	vocales=0;
-	consonan=0;
-	digitos= 0;
-	vacio =0;
-	Escribir "Ingrese la frase";
+	vocales = 0;
+	consonan = 0;
+	digitos = 0;
+	vacio = 0;
+	Escribir "Ingrese la frase ";
 	leer frase;
-	l=longitud(frase);
-	frasemin= Minusculas(frase);
-	Para  pos <- 0 Hasta l-1 Con Paso 1 Hacer
-		Si subcadena(frasemin,pos,pos)= "a" o Subcadena(frasemin,pos,pos)= "e" o Subcadena(frasemin,pos,pos)= "i"  o Subcadena(frasemin,pos,pos)= "o" o Subcadena(frasemin,pos,pos)= "u"
+	l = longitud(frase);
+	frasemin = Minusculas(frase);
+	Para  pos = 0 Hasta l-1 Con Paso 1 Hacer
+		Si subcadena(frasemin,pos,pos) = "a" o Subcadena(frasemin,pos,pos) = "e" o Subcadena(frasemin,pos,pos) = "i"  o Subcadena(frasemin,pos,pos) = "o" o Subcadena(frasemin,pos,pos)= "u"
 			vocales = vocales + 1;
 		SiNo
 			Si subcadena(frasemin,pos,pos) >= "0" y subcadena(frasemin,pos,pos) <= "9" Entonces
-				digitos= digitos + 1;
+				digitos = digitos + 1;
 			SiNo
-				Si Subcadena(frasemin,pos,pos) = " " o subcadena(frasemin,pos,pos)= "," o subcadena(frasemin,pos,pos)= "." o subcadena(frasemin,pos,pos)= ";" o subcadena(frasemin,pos,pos)= ":" Entonces
+				Si Subcadena(frasemin,pos,pos) = " " o subcadena(frasemin,pos,pos) = "," o subcadena(frasemin,pos,pos) = "." o subcadena(frasemin,pos,pos) = ";" o subcadena(frasemin,pos,pos)= ":" Entonces
 					vacio = vacio + 1;
 				SiNo
 					consonan = consonan + 1;
@@ -288,37 +303,40 @@ Funcion VocalesConsonantesDigitos()
 	Escribir " Hay " , digitos , " digito(s) en la frase"; 
 	Escribir " Hay " , consonan , " consonantes en la frase";
 FinFuncion
+
 //Funcion Dado una cadena Indicar Cuantas palabras hay en una frase teniendo en cuenta los espacios
 Funcion PalabrasenFrase()
 	Definir frase, car, carAnterior Como Caracter;
 	Definir l, pos,conta Como Entero;
-	Escribir "Introduzca una frase";
+	Escribir "Introduzca una frase ";
 	Leer frase;
-	l = longitud(frase)-1;
-	conta=1;
-	Para pos <- 0 Hasta l Con Paso 1 Hacer
-		car=Subcadena(frase,pos,pos);
-		carAnterior=Subcadena(frase,pos-1,pos-1);
-		Si car<>" " y carAnterior=" "
-			conta=conta+1
+	l = longitud(frase) -1;
+	conta = 1;
+	Para pos = 0 Hasta l Con Paso 1 Hacer
+		car = Subcadena(frase,pos,pos);
+		carAnterior = Subcadena(frase,pos-1,pos-1);
+		Si car <> " " y carAnterior = " "
+			conta = conta + 1;
 		FinSi
 	Fin Para
 	Escribir "La frase tiene: ", conta ," palabras ";
 FinFuncion
+
 //Funcion Dado una cadena Presentar la suma de los digitos de una cedula
 Funcion SumadeDigitos()
 	Definir suma, pos, x, l Como Entero;
 	Definir digito Como Caracter;
 	suma=0;
-	escribir "Ingrese su numero de cedula";
+	escribir "Ingrese su numero de cedula ";
 	leer digito;
 	l = longitud(digito);
-	Para pos<-0 Hasta l-1 Con Paso 1 Hacer
-		x = ConvertirANumero(subcadena (digito,pos,pos))
+	Para pos = 0 Hasta l-1 Con Paso 1 Hacer
+		x = ConvertirANumero(subcadena (digito,pos,pos));
 		suma = suma + x;
 	Fin Para
 	Escribir "La suma del numero de cedula ingresado es: ", suma;
 FinFuncion
+
 //Funcion Indicar si una palabra es Palindroma
 Funcion PalabraPalindroma()
 	Definir nombre, inversa Como Caracter;
@@ -326,7 +344,7 @@ Funcion PalabraPalindroma()
 	Escribir "Ingresar un nombre";
 	Leer nombre;
 	l = Longitud(nombre);
-	Para pos <- l-1 Hasta 0 Con Paso -1 Hacer
+	Para pos = l-1 Hasta 0 Con Paso -1 Hacer
 		inversa = inversa + Subcadena(nombre,l,l);
 	Fin Para
 	Escribir inversa;
@@ -336,70 +354,74 @@ Funcion PalabraPalindroma()
 		Escribir "La palabra no es palindoroma";
 	FinSi
 FinFuncion
+
 //Funcion Dado una cadena Presentar la posicion de un caracter o subcadena dentro de una cadena
 Funcion PosiciondeCaracter()
-	definir frase,frase2 Como Caracter
-	definir l, l2, x, cont, pos, donde, z como entero
-	Escribir "Ingrese la frase:"
-	frase=""
-	leer frase
-	l=longitud(frase)
-	escribir "ingrese la palabra a buscar"
-	frase2=""
-	leer frase2
-	l2=longitud(frase2)
-	x=0
-	cont=0
-	para pos=0 hasta l -1
-		si subcadena(frase,pos,pos)=subcadena(frase2,x,x)
-			donde=pos
-			z=pos
+	definir frase,frase2 Como Caracter;
+	definir l, l2, x, cont, pos, donde, z como entero;
+	Escribir "Ingrese la frase: ";
+	frase=" ";
+	leer frase;
+	l = longitud(frase);
+	escribir "ingrese la palabra a buscar";
+	frase2 = "";
+	leer frase2;
+	l2 = longitud(frase2);
+	x = 0;
+	cont = 0;
+	para pos = 0 hasta l -1
+		si subcadena(frase,pos,pos) = subcadena(frase2,x,x)
+			donde = pos;
+			z = pos;
 		finsi
 	FinPara
 	repetir
-		si subcadena(frase,z,z)=subcadena(frase2,x,x)
-			z=z+1
-			x=x+1
-			cont=cont+1
+		si subcadena(frase,z,z) = subcadena(frase2,x,x)
+			z = z + 1;
+			x = x + 1;
+			cont = cont + 1;
 		SiNo
-			z=z+1
-			x=x+1
+			z = z + 1;
+			x = x + 1;
 		finsi
-		hasta  que  subcadena(frase2,x,x) =  subcadena(frase2,l2,l2) 
-		si cont=l2 Entonces
-			escribir "existe en la posicion: ",donde
+		hasta que subcadena(frase2,x,x) = subcadena(frase2,l2,l2) 
+		si cont = l2 Entonces
+			escribir "existe en la posicion: ",donde;
 		SiNo
-			escribir "no existe"
+			escribir "no existe";
 		FinSi
 FinFuncion
+
 ///ARREGLO SUBMENU ARREGLOS 
 //Funcion Dado un arreglo cualquiera ingresarlo y presentarlo
 Funcion ArregloPresentarlo()
-	Definir num, r Como Entero
-	Dimension num[10]
-	Para r=1 Hasta 5 Hacer
-		Leer num[r]
+	Definir num, r Como Entero;
+	Dimension num[10];
+	Para r = 1 Hasta 5 Hacer
+		Leer num[r];
 	FinPara
-	Para r=1 Hasta 5 Hacer
-		Escribir num[r]
+	Para r = 1 Hasta 5 Hacer
+		Escribir num[r];
 	FinPara
 FinFuncion
+
 //Funcion Presentar los numeros pares de un arreglo 
 Funcion NumerosParesArreglo()
-	Definir numeros,pos,longitudd,cont, x Como Entero
-	Dimension numeros[11]
-	pos=1; longitudd=10
-	Escribir "ingrese valores para el arreglo" 
-	Para pos=1 Hasta Longitudd Con Paso 1 Hacer
-		Leer numeros[pos]
+	Definir numeros,pos,longitudd,cont, x Como Entero;
+	Dimension numeros[11];
+	pos = 1; longitudd = 10;
+	Escribir "Ingrese valores para el arreglo";
+	Para pos = 1 Hasta Longitudd Con Paso 1 Hacer
+		Leer numeros[pos];
 	FinPara
-	Escribir "Los numeros pares del arreglo son:"
-	Para x=1 Hasta longitudd Con Paso 1 Hacer
-		Si numeros[x] mod 2 =0 Entonces
-			Escribir  numeros[x] ","  Sin Saltar 
+	Escribir "Los numeros pares del arreglo son:";
+	Para x = 1 Hasta longitudd Con Paso 1 Hacer
+		Si numeros[x] mod 2 = 0 Entonces
+			Escribir  numeros[x] ","  Sin Saltar;
 		FinSi
 	Fin Para
 FinFuncion
+
 //Funcion Dado una serie de numeros guardar en un arreglo los numeros negativos 
 Funcion ArregloNumerosNegativos()
 	Definir Num,i,pos,nega,n Como Entero;
@@ -423,10 +445,11 @@ Funcion ArregloNumerosNegativos()
 		si Num[i] < 0 Entonces
 			
 			nega = Num[i];
-			Escribir nega ","   Sin Saltar
+			Escribir nega ","  Sin Saltar;
 		FinSi
 	FinPara
 FinFuncion
+
 //Funcion Dado un arreglo de nombres presentar el primer caracter de cada nombre
 Funcion PresentarPrimerCaracter()
 	Definir  pos, i  Como Entero;
@@ -446,132 +469,137 @@ Funcion PresentarPrimerCaracter()
 		Escribir 'Las iniciales de los nombres registrados son: ',(Subcadena(Nomb[i],0,0));
 	FinPara
 FinFuncion
+
 //Funcion Dado un arreglo de numeros presentar el total de la suma, cantidad y promedio del Arreglo
 Funcion TotalNumerosArreglo()
-	Escribir "Dado un arreglo de numeros presentar el total, la cantidad y el promedio del arreglo"
-	definir canti, prom, suma, i, num Como Entero
-	Escribir "Ingresa la cantidad de valores del arreglo"
-	leer canti
-	dimension num(canti)
+	Escribir "Dado un arreglo de numeros presentar el total, la cantidad y el promedio del arreglo";
+	definir canti, prom, suma, i, num Como Entero;
+	Escribir "Ingresa la cantidad de valores del arreglo";
+	leer canti;
+	dimension num(canti);
 	para i=0 hasta canti-1 Hacer
-		Escribir "Ingresa el valor " i+1
-		leer num(i)
-		suma=suma+num(i)
+		Escribir "Ingresa el valor " i+1;
+		leer num(i);
+		suma = suma + num(i);
 	FinPara
-	prom=suma/canti
-	escribir "La suma de los numeros ingresados dentro del arreglo es " suma
-	escribir "La cantidad de numeros dentro del arreglo es de " canti
-	Escribir "El promedio de los numeros dentro del arreglo es " prom
+	prom = suma / canti;
+	Escribir "La suma de los numeros ingresados dentro del arreglo es " suma;
+	Escribir "La cantidad de numeros dentro del arreglo es de " canti;
+	Escribir "El promedio de los numeros dentro del arreglo es " prom;
 FinFuncion
+
 //Funcion Dado un Arreglo Presentarlos al revez solo multiplos de 5 
 Funcion ArregloPresentarlos()
-	Escribir "Dado un arreglo presentarlo al revez solo los numeros multiplos de 5"
-	definir can, i, num, x Como Entero
-	Escribir "Ingresa la cantidad de valores del arreglo"
-	leer can
-	dimension num(can)
+	Escribir "Dado un arreglo presentarlo al revez solo los numeros multiplos de 5";
+	definir can, i, num, x Como Entero;
+	Escribir "Ingresa la cantidad de valores del arreglo";
+	leer can;
+	dimension num(can);
 	para i=0 hasta can-1 Hacer
-		Escribir "Ingresa el valor " i+1
-		leer num(i)
+		Escribir "Ingresa el valor " i + 1;
+		leer num(i);
 	FinPara
-	Escribir "Numeros del arreglo multiplos de 5 al reves de lo ingresado"
+	Escribir "Numeros del arreglo multiplos de 5 al reves de lo ingresado";
 	para x=can-1 Hasta 0 con paso -1 Hacer
-		si num(x) mod 5=0 Entonces
-			escribir "Posicion(" x ")" "= " num(x)
+		si num(x) mod 5 = 0 Entonces
+			escribir "Posicion(" x ")" "= " num(x);
 			
 		FinSi
 	FinPara
 FinFuncion
+
 //Funcion Dado un arreglo presentar el primero,el medio y el ultimo elemento del arreglo
 Funcion PresentarPrimeroMedioUltimo()
-	Escribir "Dado un arreglo presentar el primero,el medio y el ultimo elemento del arreglo"
-	Definir  i  ,arreglo Como Entero
-	Dimension arreglo[5]
-	Escribir "Porfavor, ingrese sus numeros: "
-	para i <- 0 Hasta 5-1 Con Paso 1 Hacer
+	Escribir "Dado un arreglo presentar el primero,el medio y el ultimo elemento del arreglo";
+	Definir  i ,arreglo Como Entero;
+	Dimension arreglo[5];
+	Escribir "Porfavor, ingrese sus numeros: ";
+	para i = 0 Hasta 5 - 1 Con Paso 1 Hacer
 		Leer arreglo[i];
 	FinPara
 	Escribir "lo que contiene los arreglo es [",i,"] es:",arreglo[0];
 	Escribir "lo que contiene los arreglo es [",i,"] es:",arreglo[2];
 	Escribir "lo que contiene los arreglo es [",i,"] es:",arreglo[4];
 FinFuncion
+
 //Funcion Dado un arreglo copiarlo en otro y presentarlo
 Funcion ArregloCopiarlo()
-	Definir numeros1,numeros2,pos,longitudd,cant,arreglo1,arreglo2 Como Entero
-	Escribir "Ingrese la cantidad de nuemros"
-	Leer cant
-	Dimension arreglo1[cant]; Dimension arreglo2[cant]
-	longitudd=cant-1
+	Definir numeros1,numeros2,pos,longitudd,cant,arreglo1,arreglo2 Como Entero;
+	Escribir "Ingrese la cantidad de nuemros";
+	Leer cant;
+	Dimension arreglo1[cant]; Dimension arreglo2[cant];
+	longitudd = cant-1;
 	Para pos=0 Hasta longitudd Con Paso 1 Hacer
-		Escribir "Ingrese los numeros ", pos
-		Leer arreglo1[pos]
+		Escribir "Ingrese los numeros ", pos;
+		Leer arreglo1[pos];
 	Fin Para
-	Escribir "el arreglo copiado en otro arreglo es"
+	Escribir "el arreglo copiado en otro arreglo es";
 	Para pos=0 Hasta longitudd Con Paso 1 Hacer
-		arreglo2[pos]=arreglo1[pos]
-		Escribir arreglo2[pos]
+		arreglo2[pos] = arreglo1[pos];
+		Escribir arreglo2[pos];
 	FinPara
 FinFuncion
+
 //Funcion Dado 2 arreglos copiar en otro arreglo la suma de cada elemento de los 2 arreglos
 Funcion DadoDosArreglos()
-	Definir num1,num2,num3,pos,longitudd,cant Como Entero
-	Escribir "Ingrese la cantidad de los numeros"
-	Leer cant 
-	Dimension num1[cant]; Dimension num2[cant]; Dimension num3[cant]
-	longitudd=cant-1
+	Definir num1,num2,num3,pos,longitudd,cant Como Entero;
+	Escribir "Ingrese la cantidad de los numeros";
+	Leer cant;
+	Dimension num1[cant]; Dimension num2[cant]; Dimension num3[cant];
+	longitudd = cant-1;
 	Para pos=0 Hasta longitudd Con Paso 1 Hacer
-		Escribir "Ingrese los numeros " ,pos
-		Leer num1[pos]
+		Escribir "Ingrese los numeros " ,pos;
+		Leer num1[pos];
 	Fin Para
-	Escribir "valores para el arreglo 2 "
+	Escribir "valores para el arreglo 2 ";
 	Para pos=0 Hasta longitudd Con Paso 1 Hacer
-		Escribir "Ingrese los numeros " ,pos
-		Leer num2[pos]
+		Escribir "Ingrese los numeros " ,pos;
+		Leer num2[pos];
 	Fin Para
 	Para pos=0 Hasta longitudd Con Paso 1 Hacer
-		num3[pos] = num1[pos] + num2[pos]
-		Escribir num3[pos]
+		num3[pos] = num1[pos] + num2[pos];
+		Escribir num3[pos];
 	Fin Para
 FinFuncion
 //Funcion Dado una serie de numeros guarda en un arreglo los factoriales
 Funcion ArregloFactoriales()
-	Definir num,cant,pos,longitudd,fact Como Entero
-	fact=1;
-	Escribir "Ingrese la cantidad de los numeros"
-	Leer cant
-	Dimension num[cant]
-	longitudd=cant-1
+	Definir num,cant,pos,longitudd,fact Como Entero;
+	fact = 1;
+	Escribir "Ingrese la cantidad de los numeros";
+	Leer cant;
+	Dimension num[cant];
+	longitudd = cant-1;
 	Para pos=0 Hasta longitudd Con Paso 1 Hacer
-		Escribir "Ingrese los numeros " ,pos
-		Leer num[pos]
+		Escribir "Ingrese los numeros " ,pos;
+		Leer num[pos];
 	Fin Para
 	Para pos=0 Hasta longitudd Con Paso 1 Hacer
-		fact=fact*num[pos]
-		num[pos]=fact
-		Escribir  num[pos]
+		fact = fact * num[pos];
+		num[pos] = fact;
+		Escribir num[pos];
 	Fin Para
 FinFuncion
 
 /// Algoritmo principal del proyecto
 Algoritmo Proyecto
-	Definir menuPrincipal,menuNumeros,menuCadenas,menuArreglos,titulo,titulo2,opc,opcn,apcc,apca Como Caracter
-	Definir pos,lim Como Entero
-	Dimension menuPrincipal[4],menuNumeros[11],menuCadenas[11],menuArreglos[11]
+	Definir menuPrincipal,menuNumeros,menuCadenas,menuArreglos,titulo,titulo2,opc,opcn,apcc,apca Como Caracter;
+	Definir pos,lim Como Entero;
+	Dimension menuPrincipal[4],menuNumeros[11],menuCadenas[11],menuArreglos[11];
 	
 	/// Arreglo menu principal
-	menuPrincipal[0] = "  1)Ejercicios con Numeros"
-	menuPrincipal[1] = "  2)Ejercicios con Cadenas"
-	menuPrincipal[2] = "  3)Ejercicios con Arreglos"
-	menuPrincipal[3] = "  4)Salir"
+	menuPrincipal[0] = "  1)Ejercicios con Numeros";
+	menuPrincipal[1] = "  2)Ejercicios con Cadenas";
+	menuPrincipal[2] = "  3)Ejercicios con Arreglos";
+	menuPrincipal[3] = "  4)Salir";
 	
 	/// ARREGLO SUBMENU NUMEROS
-	menuNumeros[0] = "  1)Mayor de 2 Numeros"
-	menuNumeros[1] = "  2)Dividir dos numeros por restas"
-	menuNumeros[2] = "  3)Multiplicar dos numeros por sumas"
+	menuNumeros[0] = "  1)Mayor de 2 Numeros";
+	menuNumeros[1] = "  2)Dividir dos numeros por restas";
+	menuNumeros[2] = "  3)Multiplicar dos numeros por sumas";
 	// n=5 : 20,5,10,2,1 respuesta: sumpares=32  multiplos5=1000
-	menuNumeros[3] = "  4)Suma Pares y Productos multiplos de 5 de una secuencia de numeros"
+	menuNumeros[3] = "  4)Suma Pares y Productos multiplos de 5 de una secuencia de numeros";
 	//  2,123,10,2345,0 respuesta = 10    r=trunc(2/10)=0 r = 2 mod 10 =2
-	menuNumeros[4] = "  5)Presentar cantidad de digitos de todos los numeros de una secuencia de numeros hasta 0"
+	menuNumeros[4] = "  5)Presentar cantidad de digitos de todos los numeros de una secuencia de numeros hasta 0";
 	//El almacen SomosMas tiene una promoci?n: a todos los trajes que tienen un
 	//precio superior a 100, se les aplicar? un descuento del 10%  y a los demas
 	//el 5%. presentar el valor de cada traje con su respectivo valor, descuento y pago
@@ -579,239 +607,238 @@ Algoritmo Proyecto
 	// n=2
 	// PrecioTraje=120   des=precioTraje*0.10=12  iva=(120-12)*0.12 pago=precioTraje-des+iva
 	// PrecioTraje=50   des=precioTraje*0.05=2.5  iva=(50-2.5)*0.12
-	menuNumeros[5] = "  6)Mostrar El Precio, descuento, iva y pago de n trajes del amacen SomosMas"
-	menuNumeros[6] = "  7)Dado tres numeros indicar si el segundo es el mayor"
+	menuNumeros[5] = "  6)Mostrar El Precio, descuento, iva y pago de n trajes del amacen SomosMas";
+	menuNumeros[6] = "  7)Dado tres numeros indicar si el segundo es el mayor";
 	// la secuencia termina cuando se ingrese un numero negativo
 	// 2,4,6,8,-10
-	menuNumeros[7] = "  8)Dado una secuencia de numeros presentar su promedio"
+	menuNumeros[7] = "  8)Dado una secuencia de numeros presentar su promedio";
 	// dos numeros son amigos cuando la suma de los divisores del primer numero
 	// son iguales a la suma de los divisores del segundo numero.
 	// n1=6(1,2,3)=6 n2=25(1,5)=6
-	menuNumeros[8] = "  9)Numeros amigos"
+	menuNumeros[8] = "  9)Numeros amigos";
 	// dos numeros son primos gemelos si ambos son primos
 	//n1=5  n2=7
-	menuNumeros[9] = "  10)primos gemelos"
-	menuNumeros[10]= "  11)Salir"
+	menuNumeros[9] = "  10)primos gemelos";
+	menuNumeros[10]= "  11)Salir";
 	
 	/// ARREGLOS SUBMENU CADENAS
 	// nombre = "ana"  ana
-	menuCadenas[0] = "  1)Presentar un nombre caracter por caracter"
+	menuCadenas[0] = "  1)Presentar un nombre caracter por caracter";
 	// frase="hola que tal"    hql
-	menuCadenas[1] = "  2)Presentar el primero, el medio y el ultimo caracter de una frase"
+	menuCadenas[1] = "  2)Presentar el primero, el medio y el ultimo caracter de una frase";
 	//nom1="daniel" nombre2="daniel" si nombre1 = nombre2
-	menuCadenas[2] = "  3)Dado dos nombres indicar si son iguales"
+	menuCadenas[2] = "  3)Dado dos nombres indicar si son iguales";
 	//f1="Hola" f2="mal"  si longitud(f1)>longitud(f2)
-	menuCadenas[3] = "  4)Dadas dos frase indicar la de mayor longitud"
+	menuCadenas[3] = "  4)Dadas dos frase indicar la de mayor longitud";
 	//frase="Hola, que tal; como te va,Bien: y tu, como estas."
 	// ,=3  .=1  ;=1 :1   si subcadena(frase,pos,pos)=","
-	menuCadenas[4] = "  5)Indicar cuantas ,.;: hay en una cadena"
+	menuCadenas[4] = "  5)Indicar cuantas ,.;: hay en una cadena";
 	//frase="Juan tiene 20 dolares"
 	// vocales=8   consonantes=11  digitos=2  si subcadena(frase,pos,pos)>="0" y <="9"
-	menuCadenas[5] = "  6)Dado una cadena indicar cuantas vocales, consonantes y digitos hay"
+	menuCadenas[5] = "  6)Dado una cadena indicar cuantas vocales, consonantes y digitos hay";
 	// frase = "hola   que  tal" palabras=3
-	menuCadenas[6] = "  7)Indicar cuantas palabras hay en una frase asumiendo 1 o varios espacios entre palabras"
+	menuCadenas[6] = "  7)Indicar cuantas palabras hay en una frase asumiendo 1 o varios espacios entre palabras";
 	// cedula="0914192182"= 37   convertirANumero(subcadena(frase,pos,pos))
-	menuCadenas[7] = "  8)Presentar la suma de los digitos de una cedula"
+	menuCadenas[7] = "  8)Presentar la suma de los digitos de una cedula";
 	// palabra="ana"
-	menuCadenas[8] = "  9)Indicar si una palabra es palindroma"
+	menuCadenas[8] = "  9)Indicar si una palabra es palindroma";
 	// cadena="hola que tal"
 	//         01234567891011
 	//caracter="qui"  resp=-1
 	//caracter="que"  resp=5
-	menuCadenas[9] = "  10)Presentar la posicion de un caracter o subcadena cualquiera dentro de una cadena"
-	menuCadenas[10] = "  11)Salir"
+	menuCadenas[9] = "  10)Presentar la posicion de un caracter o subcadena cualquiera dentro de una cadena";
+	menuCadenas[10] = "  11)Salir";
 	
 	/// Arreglo submenu arreglos
 	// arreglo=[2,4,5,8,10]  presentar 2 4 5 8 10
-	menuArreglos[0]= "1)Dado un arreglo cualquiera ingresarlo y presentarlo"
+	menuArreglos[0]= "1)Dado un arreglo cualquiera ingresarlo y presentarlo";
 	// arreglo=[2,3,4,67,8] presenta 2 4 8  
-	menuArreglos[1]= "2)Presentar los numeros pares de un arreglo"
-    //n=5
+	menuArreglos[1]= "2)Presentar los numeros pares de un arreglo";
 	// 2,4,-6,2,-5 = [-6,-5]  = presenta -6 -5
-	menuArreglos[2]= "3)Dado una serie de numeros guardar en un arreglo solo los numeros negativos"
+	menuArreglos[2]= "3)Dado una serie de numeros guardar en un arreglo solo los numeros negativos";
     // n=3
 	// ["ana","jose","dan"]  presenta a j d 
-	menuArreglos[3]= "4)Dado un arreglo de nombres presentar el primer caracter de cada nombre"
+	menuArreglos[3]= "4)Dado un arreglo de nombres presentar el primer caracter de cada nombre";
     //n=5  arreglo=[10,20,30,5,10]= total=75  cant=5   prom=15   
-	menuArreglos[4]= "5)Dado un arreglo de numeros presentar el total, la cantidad y el promedio del arreglo"
+	menuArreglos[4]= "5)Dado un arreglo de numeros presentar el total, la cantidad y el promedio del arreglo";
     //n=5  arreglo=[8,20,7,5,4] presenta 5 20
-	menuArreglos[5]= "6)Dado un arreglo presentarlo al revez solo los numeros multiplos de 5"
+	menuArreglos[5]= "6)Dado un arreglo presentarlo al revez solo los numeros multiplos de 5";
 	//n=5  arreglo=[8,20,7,5,4] presenta 8  7  4
-	menuArreglos[6]= "7)Dado un arreglo presentar el primero,el medio y el ultimo elemento del arreglo"
+	menuArreglos[6]= "7)Dado un arreglo presentar el primero,el medio y el ultimo elemento del arreglo";
     //n=5  arreglo1=[8,20,7,5,4]   arreglo2=[8,20,7,5,4] presenta 8,20,7,5,4
-	menuArreglos[7]= "8)Dado un arreglo copiarlo en otro y presentarlo"
+	menuArreglos[7]= "8)Dado un arreglo copiarlo en otro y presentarlo";
     //n=5  arreglo1=[8,20,7,5,4]
 	//     arreglo2=[2,1,3,5,6] copiarArreglo3=[pos]=arreglo1[pos]+arreglo2[pos]
-	menuArreglos[8]= "9)Dado 2 arreglos copiar en un otroarreglo la suma de cada elemento de los 2 arreglos"
+	menuArreglos[8]= "9)Dado 2 arreglos copiar en un otroarreglo la suma de cada elemento de los 2 arreglos";
 	//n=5  3,2,1,5,4  arregloFactorual [6,2,1,120,24] 
-	menuArreglos[9]= "10)Dado una serie de numeros guarda en un arreglo los factoriales"
-	menuArreglos[10]="11) Salir"
-	opc=""
+	menuArreglos[9]= "10)Dado una serie de numeros guarda en un arreglo los factoriales";
+	menuArreglos[10]="11) Salir";
+	opc="";
     Mientras opc <> "4" Hacer
-		opc=presentarMenu("Menu Principal",menuPrincipal,4)
+		opc=presentarMenu("Menu Principal",menuPrincipal,4);
 		Segun opc Hacer
 			"1":
-				opcn=""
+				opcn="";
 				Mientras opcn <> "11" Hacer         
-					opcn=presentarMenu("Menu Numeros",menuNumeros,11)
+					opcn=presentarMenu("Menu Numeros",menuNumeros,11);
 					Segun opcn Hacer
 						"1":
-							Escribir "Mayor de dos Numeros"
-							mayorDosNumeros()
-							Esperar 3 Segundos
+							Escribir "Mayor de dos Numeros";
+							mayorDosNumeros();
+							Esperar 3 Segundos;
 						"2":
-							Escribir "Dividir dos numeros por restas"
-							DivisiondeRestas()
-							Esperar 3 Segundos
+							Escribir "Dividir dos numeros por restas";
+							DivisiondeRestas();
+							Esperar 3 Segundos;
 						"3":
-							Escribir "Multiplicar dos numeros por sumas"
-							MultiplicacionporSumas()
-							Esperar 3 Segundos
+							Escribir "Multiplicar dos numeros por sumas";
+							MultiplicacionporSumas();
+							Esperar 3 Segundos;
 						"4":
-							Escribir "Suma de pares y Producto de multiplos de 5"
-							sumaparesproductomultiplos5()
-							Esperar 3 segundos 
+							Escribir "Suma de pares y Producto de multiplos de 5";
+							sumaparesproductomultiplos5();
+							Esperar 3 segundos;
 						"5":
-							Escribir "cantidad de digitos de todos los numeros de una secuencia de numeros"
-							cantidaddenumeros()
-							Esperar 3 segundos 
+							Escribir "cantidad de digitos de todos los numeros de una secuencia de numeros";
+							cantidaddenumeros();
+							Esperar 3 segundos;
 						"6":
-							Escribir "Iva y total, Somos Mas"
-							sacarivaytotal()
-							Esperar 3 segundos
+							Escribir "Iva y total, Somos Mas";
+							sacarivaytotal();
+							Esperar 3 segundos;
 						"7":
-							Escribir "Dado tres numeros indicar si el segundo es el mayor"
-							Dadotresnumeros()
-							Esperar 3 segundos
+							Escribir "Dado tres numeros indicar si el segundo es el mayor";
+							Dadotresnumeros();
+							Esperar 3 segundos;
 						"8":
-							Escribir "Dado una secuencia de numeros presentar su promedio"
-							CantidadDeNumerosPromedio()
-							Esperar 3 segundos	
+							Escribir "Dado una secuencia de numeros presentar su promedio";
+							CantidadDeNumerosPromedio();
+							Esperar 3 segundos;
 						"9":
-							Escribir "Numeros Amigos"
-							NumerosAmigos()
-							Esperar 3 segundos
+							Escribir "Numeros Amigos";
+							NumerosAmigos();
+							Esperar 3 segundos;
 						"10":
-							Escribir "Primos Gemelos"
-							PrimosGemelos()
-							Esperar 3 Segundos 
+							Escribir "Primos Gemelos";
+							PrimosGemelos();
+							Esperar 3 Segundos;
 						"11":
-							Escribir "Regresando al Menu Principal"
-							Esperar 3 Segundos
+							Escribir "Regresando al Menu Principal";
+							Esperar 3 Segundos;
 						De Otro Modo:
-							Escribir "Opcion invalida..."
-							Esperar 3 Segundos
+							Escribir "Opcion invalida...";
+							Esperar 3 Segundos;
 					Fin Segun
 				FinMientras
 			"2":
-				opcn=""
+				opcn="";
 				Mientras opcn <> "11" Hacer         
-					opcn=presentarMenu("Menu Cadenas",menuCadenas,11)
+					opcn=presentarMenu("Menu Cadenas",menuCadenas,11);
 					Segun opcn Hacer
 						"1":
-							Escribir "//Nombre Caracter por Caracter//"
-							Caracterporcaracter()
-							Esperar 3 Segundos
+							Escribir "//Nombre Caracter por Caracter//";
+							Caracterporcaracter();
+							Esperar 3 Segundos;
 						"2":
-							Escribir "//Presentar el Primero, El Medio y El Ultimo de una Frase//"
-							PrimeroUltimoMedio()
-							Esperar 3 Segundos 
+							Escribir "//Presentar el Primero, El Medio y El Ultimo de una Frase//";
+							PrimeroUltimoMedio();
+							Esperar 3 Segundos;
 						"3":
-							Escribir "//Ingresar Dos Frases y ver si son Iguales//"
-							SonIguales()
-							Esperar 3 Segundos
+							Escribir "//Ingresar Dos Frases y ver si son Iguales//";
+							SonIguales();
+							Esperar 3 Segundos;
 						"4":
-							Escribir "//Frase de Mayor Longitud//"
-							MayorLongitud()
-							Esperar 3 Segundos
+							Escribir "//Frase de Mayor Longitud//";
+							MayorLongitud();
+							Esperar 3 Segundos;
 						"5":
-							Escribir "//cuantas ,.;: hay en una cadena//"
-							PuntoyComa()
-							Esperar 3 Segundos
+							Escribir "//cuantas ,.;: hay en una cadena//";
+							PuntoyComa();
+							Esperar 3 Segundos;
 						"6":
-							Escribir "//cuantas vocales, consonantes y digitos hay En una Frase//"
-							VocalesConsonantesDigitos()
-							Esperar 3 Segundos
+							Escribir "//cuantas vocales, consonantes y digitos hay En una Frase//";
+							VocalesConsonantesDigitos();
+							Esperar 3 Segundos;
 						"7":
-							Escribir "//Cuantas palabras hay en una Frase//"
-							PalabrasenFrase()
-							Esperar 3 Segundos
+							Escribir "//Cuantas palabras hay en una Frase//";
+							PalabrasenFrase();
+							Esperar 3 Segundos;
 						"8":
-							Escribir "//Presentar la Suma de los digitos de una Cedula//"
-							SumadeDigitos()
-							Esperar 3 Segundos
+							Escribir "//Presentar la Suma de los digitos de una Cedula//";
+							SumadeDigitos();
+							Esperar 3 Segundos;
 						"9":
-							Escribir "//Indicar si una palabra es palindroma//"
-							PalabraPalindroma()
-							Esperar 3 Segundos
+							Escribir "//Indicar si una palabra es palindroma//";
+							PalabraPalindroma();
+							Esperar 3 Segundos;
 						"10":
-							Escribir "//Presentar la posicion de un caracter o subcadena dentro de una cadena//"
-							PosiciondeCaracter()
-							Esperar 3 Segundos
+							Escribir "//Presentar la posicion de un caracter o subcadena dentro de una cadena//";
+							PosiciondeCaracter();
+							Esperar 3 Segundos;
 						"11":
-							Escribir "Regresando al Menu Principal"
-							Esperar 3 Segundos
+							Escribir "Regresando al Menu Principal";
+							Esperar 3 Segundos;
 						De Otro Modo:
-							Escribir "Opcion invalida..."
-							Esperar 3 Segundos
+							Escribir "Opcion invalida...";
+							Esperar 3 Segundos;
 					FinSegun
 				FinMientras
 			"3":
-				opcn=""
+				opcn="";
 				Mientras opcn <> "11" Hacer         
-					opcn=presentarMenu("Menu Arreglos",menuArreglos,11)
+					opcn=presentarMenu("Menu Arreglos",menuArreglos,11);
 					Segun opcn Hacer
 						"1":
-							Escribir "//Dado un arreglo Cualquiera ingresarlo y Presentarlo//"
-							ArregloPresentarlo()
-							Esperar 3 Segundos
+							Escribir "//Dado un arreglo Cualquiera ingresarlo y Presentarlo//";
+							ArregloPresentarlo();
+							Esperar 3 Segundos;
 						"2":
-							Escribir "//Presentar Los Numeros Pares de Un Arreglo//"
-							NumerosParesArreglo()
-							Esperar 3 Segundos
+							Escribir "//Presentar Los Numeros Pares de Un Arreglo//";
+							NumerosParesArreglo();
+							Esperar 3 Segundos;
 						"3":
-							Escribir "//Dado la serie de numeros guardar en un arreglo los numeros negativos//"
-							ArregloNumerosNegativos()
-							Esperar 3 Segundos
+							Escribir "//Dado la serie de numeros guardar en un arreglo los numeros negativos//";
+							ArregloNumerosNegativos();
+							Esperar 3 Segundos;
 						"4":
-							Escribir "//Presentar el Primer Caracter de los Nombres//"
-							PresentarPrimerCaracter()
-							Esperar 3 Segundos
+							Escribir "//Presentar el Primer Caracter de los Nombres//";
+							PresentarPrimerCaracter();
+							Esperar 3 Segundos;
 						"5":
-							Escribir "//presentar el total, la cantidad y el promedio del arreglo//"
-							TotalNumerosArreglo()
-							Esperar 3 Segundos
+							Escribir "//presentar el total, la cantidad y el promedio del arreglo//";
+							TotalNumerosArreglo();
+							Esperar 3 Segundos;
 						"6":
-							Escribir "//Dado un arreglo presentarlo al revez solo los numeros multiplos de 5//"
-							ArregloPresentarlos()
-							Esperar 3 Segundos
+							Escribir "//Dado un arreglo presentarlo al revez solo los numeros multiplos de 5//";
+							ArregloPresentarlos();
+							Esperar 3 Segundos;
 						"7":
-							Escribir "//presentar el primero,el medio y el ultimo elemento del arreglo//"
-							PresentarPrimeroMedioUltimo()
-							Esperar 3 Segundos 
+							Escribir "//presentar el primero,el medio y el ultimo elemento del arreglo//";
+							PresentarPrimeroMedioUltimo();
+							Esperar 3 Segundos;
 						"8":
-							Escribir "//Dado un Arreglo copiarlo en otro y Presentarlo//"
-							ArregloCopiarlo()
-							Esperar 3 Segundos
+							Escribir "//Dado un Arreglo copiarlo en otro y Presentarlo//";
+							ArregloCopiarlo();
+							Esperar 3 Segundos;
 						"9":
-							Escribir "//Dado dos Arreglos copiar en otro arreglo la suma de los Elementos de los 2 Arreglos//"
-							DadoDosArreglos()
-							Esperar 3 Segundos
+							Escribir "//Dado dos Arreglos copiar en otro arreglo la suma de los Elementos de los 2 Arreglos//";
+							DadoDosArreglos();
+							Esperar 3 Segundos;
 						"10":
-							Escribir "//Dado una serie de numeros guarda en un arreglo los factoriales//"
-							ArregloFactoriales()
-							Esperar 3 Segundos
+							Escribir "//Dado una serie de numeros guarda en un arreglo los factoriales//";
+							ArregloFactoriales();
+							Esperar 3 Segundos;
 						"11":
-							Escribir "Regresando al Menu Principal"
-							Esperar 3 Segundos
+							Escribir "Regresando al Menu Principal";
+							Esperar 3 Segundos;
 						De Otro Modo:
-							Escribir "Opcion invalida..."
-							Esperar 3 Segundos
+							Escribir "Opcion invalida...";
+							Esperar 3 Segundos;
 					FinSegun
 				FinMientras
 			"4":
-				Escribir "Gracias por usar el Sistema"
-				Esperar 3 Segundos
+				Escribir "Gracias por usar el Sistema";
+				Esperar 3 Segundos;
 		Fin Segun
     Fin Mientras
 FinAlgoritmo
