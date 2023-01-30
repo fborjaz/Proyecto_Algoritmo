@@ -21,5 +21,6 @@
 - **Jordy Pincay - jpincaym7@unemi.edu.ec** ©
 - **Joffre Baquerizo - jbaquerizol3@unemi.edu.ec** ©
 - **Frank Borja - fborjaz@unemi.edu.ec** ©
+- **Gabriel Hasqui - gabrielhasqui2996@gmail.com** ©
 
 
