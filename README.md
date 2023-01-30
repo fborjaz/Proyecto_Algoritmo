@@ -7,7 +7,7 @@
 - Ejercicios con cadenas.
 - Ejercicios con arreglos.
 
-## Sub Menu
+## Sub Temas
 
 1. arreglo submenu Numeros
 2. Arrelo submenu Cadenas
