@@ -1,5 +1,5 @@
 # Proyecto
-> Documentación.
+> Documentación..
 
 ## Temas del Proyecto
 
