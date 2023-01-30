@@ -40,11 +40,11 @@ Funcion DivisiondeRestas()
 		num1 = num1 - num2;
 		cociente = cociente + 1;
 	FinMientras
-	Escribir "El cociente de la divisi?n es: ", " " cociente;
+	Escribir "El cociente de la division es: ", " " cociente;
 	Escribir "El Restante es: ", " " num1;
 FinFuncion
 
-//Funcion multplicaci?n de dos numeros por sumas
+//Funcion multplicacion de dos numeros por sumas
 Funcion MultiplicacionporSumas() 
 	Definir num1, num2, c, resu Como Entero;
 	resu = 0;
@@ -343,6 +343,7 @@ Funcion PalabraPalindroma()
 	Definir pos Como Entero;
 	Escribir "Ingresar un nombre";
 	Leer nombre;
+	nombre=Minusculas(nombre)
 	Para pos=longitud(nombre) Hasta 0 Con Paso -1 Hacer
 		inversa = inversa + Subcadena(nombre,pos,pos);
 	Fin Para
