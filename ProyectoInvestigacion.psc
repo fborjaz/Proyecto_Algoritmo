@@ -74,7 +74,7 @@ FinFuncion
 //salida contador de numeros pares y contador de multiplos de 5
 //ejemplo [2,5,10,8,7,30,4,15,11,22] Numeros pares= 5, multiplos de 5=4
 Funcion sumaparesproductomultiplos5()
-	definir sumapares, multiplos, n Como real
+	definir sumapares, multiplos, n, num, i Como real
 	sumapares=0
 	multiplos=1
 	num=1
@@ -83,20 +83,20 @@ Funcion sumaparesproductomultiplos5()
 	Para i=1 Hasta n Con Paso 1 Hacer
 		Escribir "Ingresa un numero"
 		leer num 
-			si num mod 2=0 Entonces
+		si num mod 2=0 Entonces
 			sumapares=sumapares+num
-			SiNo
-				si num mod 5=0 Entonces
-					multiplos=multiplos*num
-				FinSi
+		SiNo
+			si num mod 5=0 Entonces
+				multiplos=multiplos*num
 			FinSi
+		FinSi
 	fin para
 	escribir "La suma de pares es " sumapares
 	escribir "El producto de multiplos de 5 es " multiplos
 FinFuncion
 //Funcion cantidad de digitos de numeros hasta leer 0
 Funcion cantidaddenumeros()
-	definir digitos,num,divisor como real
+	definir digitos,num,divisor,div como real
 	digitos=0
 	num=1
 	divisor=0
@@ -115,7 +115,7 @@ Funcion cantidaddenumeros()
 FinFuncion
 //Funcion sacar iva y total
 Funcion sacarivaytotal()
-	definir iva, precio, descuento,x,preciofinal Como Real
+	definir iva, precio, descuento,x,preciofinal,ntrajes,i Como Real
 	escribir "Ingresa la cantidad de trajes comprados"
 	leer ntrajes
 	Para x<-1 Hasta ntrajes Hacer
@@ -417,12 +417,12 @@ Funcion PosiciondeCaracter()
 			z = z + 1;
 			x = x + 1;
 		finsi
-		hasta que subcadena(frase2,x,x) = subcadena(frase2,l2,l2) 
-		si cont = l2 Entonces
-			escribir "existe en la posicion: ",donde;
-		SiNo
-			escribir "no existe";
-		FinSi
+	hasta que subcadena(frase2,x,x) = subcadena(frase2,l2,l2) 
+	si cont = l2 Entonces
+		escribir "existe en la posicion: ",donde;
+	SiNo
+		escribir "no existe";
+	FinSi
 FinFuncion
 
 ///ARREGLO SUBMENU ARREGLOS 
@@ -464,7 +464,7 @@ FinFuncion
 
 //Funcion Dado una serie de numeros guardar en un arreglo los numeros negativos 
 Funcion ArregloNumerosNegativos()
-	Definir num, cantidad,n, negativos Como Entero;
+	Definir num, cantidad,n, negativos, i Como Entero;
 	Escribir "Ingrese la cantidad de arreglos";
 	Leer cantidad;
 	Dimension num[cantidad];
@@ -513,7 +513,7 @@ Funcion TotalNumerosArreglo()
 		leer num(i);
 		suma = suma + num(i);
 	FinPara
-	prom = suma / canti;
+	prom = trunc(suma / canti);
 	Escribir "La suma de los numeros ingresados dentro del arreglo es " suma;
 	Escribir "La cantidad de numeros dentro del arreglo es de " canti;
 	Escribir "El promedio de los numeros dentro del arreglo es " prom;
@@ -541,8 +541,8 @@ FinFuncion
 
 //Funcion Dado un arreglo presentar el primero,el medio y el ultimo elemento del arreglo
 Funcion PresentarPrimeroMedioUltimo()
-	definir cantidad Como Entero
-	Definir primero, ultimo, medio Como Caracter
+	definir cantidad, i Como Entero
+	Definir primero, ultimo, medio, elementos Como Caracter
 	escribir "Ingresa la cantidad de valores para el arreglo"
 	leer cantidad
 	dimension elementos(cantidad)
@@ -599,8 +599,8 @@ Funcion DadoDosArreglos()
 FinFuncion
 //Funcion Dado una serie de numeros guarda en un arreglo los factoriales
 Funcion ArregloFactoriales()
-	Definir n,x,c, nl,cont, arreglo Como Entero;
-	Definir f Como Real;
+	Definir n,x,c, nl,arreglo, cont Como entero;
+	Definir f  Como Real;
 	Escribir "Ingrese la cantidad de numeros que contiene la serie:";
 	Leer nl;
 	Dimension arreglo(100);
@@ -612,7 +612,7 @@ Funcion ArregloFactoriales()
 			f<-1;
 			c<-1;
 			Mientras c<=n Hacer
-				f<-f*c;
+				f<-(f*c);
 				c<-c+1;
 			FinMientras
 		SiNo
