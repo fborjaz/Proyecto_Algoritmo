@@ -13,6 +13,9 @@ Funcion opcion = presentarMenu(titulo,menu,lim)
 FinFuncion
 /// ARREGLO SUBMENU NUMEROS
 // Pide dos numeros y presenta el mayor de los dos
+//entrada:numero1 y numero2
+//comparar numero1<numero2 o numero1>numero2
+//salida:numeromayor ejemplo:5>2 presentar 5
 Funcion mayorDosNumeros()
 	Definir num1,num2 Como Entero;
 	Escribir "Ingrese numero 1: ";
@@ -23,14 +26,17 @@ Funcion mayorDosNumeros()
 		Escribir num1," Es mayor que ",num2;
 	SiNo
 		Si num1 < num2 Entonces
-			Escribir num1," Es menor que ",num2;
+			Escribir num2," Es mayor que ",num1;
 		SiNo
 			Escribir num1," Es igual a ",num2;
 		Fin Si
 	Fin Si
 FinFuncion
-
-//Funcion Divisi?n de Restas
+//Funcion Division usando Restas
+//entrada:num1 y num2
+//num2 restara num1 hasta que num1 >= num2 un contador aumentara la veces que se realize la suma 
+//salida valor Resta final como residuo y contador como cociente 
+//ejemplo 8 dividido para 4 *** 8-4=4, 4-4=0 residuo=0 ultima resta,cociente=2 veces que se realizo la resta
 Funcion DivisiondeRestas()
 	Definir num1, num2, cociente Como Entero;
 	cociente = 0;
@@ -40,11 +46,15 @@ Funcion DivisiondeRestas()
 		num1 = num1 - num2;
 		cociente = cociente + 1;
 	FinMientras
-	Escribir "El cociente de la divisi?n es: ", " " cociente;
+	Escribir "El cociente de la division es: ", " " cociente;
 	Escribir "El Restante es: ", " " num1;
 FinFuncion
-
-//Funcion multplicaci?n de dos numeros por sumas
+//Funcion multplicacion de dos numeros por sumas
+//Funcion Division usando Restas
+//entrada:num1 y num2
+//num2 sera la veces que realizaremos la suma del num1 por si mismo
+//salida resultado de suma total
+//ejemplo 4*3 ; 0+4=4, 4+4=8, 8+4=12
 Funcion MultiplicacionporSumas() 
 	Definir num1, num2, c, resu Como Entero;
 	resu = 0;
@@ -57,49 +67,73 @@ Funcion MultiplicacionporSumas()
 	FinPara
 	Escribir "El resultado de la operaci?n es: ", " " resu;
 FinFuncion
-
 //Funcion Suma Pares y Productos multiplos de 5 de una secuencia de numeros
+//entrada 10 numeros 
+// comparar si los numeros son multiplos de 2 para saber si son pares ej: NUM/2=0 en tal caso el contador aumentara 
+// comparar si los numeros son multiplos de 5  ej:NUM/5=0 en tal caso el contador aumentara 
+//salida contador de numeros pares y contador de multiplos de 5
+//ejemplo [2,5,10,8,7,30,4,15,11,22] Numeros pares= 5, multiplos de 5=4
 Funcion sumaparesproductomultiplos5()
-	Definir num, sum, producto como entero;
-	Sum = 0; producto = 1;
-	para num = 1 Hasta 10 Hacer
-		si num mod 2 = 0 entonces 
-			sum = sum + num;
+	definir sumapares, multiplos, n, num, i Como real;
+	sumapares=0;
+	multiplos=1;
+	num=1;
+	escribir "cantidad de la  serie";
+	leer n;
+	Para i=1 Hasta n Con Paso 1 Hacer
+		Escribir "Ingresa un numero";
+		leer num;
+		si num mod 2=0 Entonces
+			sumapares=sumapares+num;
+		SiNo
+			si num mod 5=0 Entonces
+				multiplos=multiplos*num;
+			FinSi
 		FinSi
-		Si num mod 5 = 0 Entonces
-			producto = trunc(producto * num);
-		FinSi
-	FinPara
-	Escribir "La suma de los pares es: ", " " sum;
-	Escribir "El producto de los multiplos de 5 es: ", " " producto;
+	fin para
+	escribir "La suma de pares es " sumapares;
+	escribir "El producto de multiplos de 5 es " multiplos;
 FinFuncion
-
-//Funcion cantidad de numeros hasta leer 0
+//Funcion cantidad de digitos de numeros hasta leer 0
 Funcion cantidaddenumeros()
-	Definir num Como Entero;
-	num = 1;
-	Escribir "Cantidad de Digitos ";
-	Mientras num <> 0 Hacer
-		Leer num;
-	FinMientras
+	definir digitos,num,divisor,div como real;
+	digitos=0;
+	num=1;
+	divisor=0;
+	mientras num<>0 Hacer
+		Escribir "Ingresa un numero";
+		leer num;
+		si num<>0 Entonces
+			divisor=num;
+			Repetir
+				divisor=trunc(div/10);
+				digitos=digitos+1;
+			hasta Que divisor=0
+		fin si
+	fin mientras
+	Escribir "La suma de digitos de todos los numeros es " digitos;
 FinFuncion
-
 //Funcion sacar iva y total
 Funcion sacarivaytotal()
-	Definir num, des, precio, i Como Entero;
-	Definir iva, total Como Real;
-	Escribir "Cuantos trajes desea llevar";
-	Leer num;
-	Para i=1 hasta num con paso 1 Hacer
-		Escribir "Precio del traje #",i;
-		Leer precio;
-		des = trunc(precio / 10);
-		iva = (precio - 12) * 0.12;
-		total = precio - des + iva;
-		Escribir "El total del traje #",i " " "es:", " " total "$";
-	FinPara
+	definir iva, precio, descuento,x,preciofinal,ntrajes,i Como Real;
+	escribir "Ingresa la cantidad de trajes comprados";
+	leer ntrajes;
+	Para x<-1 Hasta ntrajes Hacer
+		Escribir "Ingrese le precio del traje " i;
+		leer precio;
+		Si precio>100 Entonces
+			descuento=precio*0.10;
+			iva=(precio-descuento)*0.12;
+			preciofinal=(precio-descuento)+iva;
+			Escribir "El costo del traje " x " es " precio "   su  descuento  es " iva " el precio final es ",preciofinal;
+		SiNo
+			descuento=precio*0.05;
+			iva=(precio-descuento)*0.12;
+			preciofinal=(precio-descuento)+iva;
+			Escribir "El costo del traje " x " es " precio "   su  descuento  es " iva " el precio final es ",preciofinal;
+		finsi
+	Fin Para
 FinFuncion
-
 //Funcion dado tres numeros indicar si el segundo es el mayor 
 Funcion Dadotresnumeros()
 	Definir n1,n2,n3 como entero;
@@ -188,10 +222,9 @@ Funcion Caracterporcaracter()
 	Leer frase;
 	l = Longitud(frase) -1;
 	Para pos = 0 Hasta l Con Paso 1 Hacer
-		Escribir Subcadena(frase,pos,pos) Sin Saltar;
+		Escribir Subcadena(frase,pos,pos) ;
 	Fin Para
 FinFuncion
-
 //Funcion Presentar el Primero, El Medio y El Ultimo de una Frase
 Funcion PrimeroUltimoMedio()
 	Definir nombre, primero, medio, ultimo Como Caracter;
@@ -340,18 +373,18 @@ FinFuncion
 //Funcion Indicar si una palabra es Palindroma
 Funcion PalabraPalindroma()
 	Definir nombre, inversa Como Caracter;
-	Definir l, pos Como Entero;
+	Definir pos Como Entero;
 	Escribir "Ingresar un nombre";
 	Leer nombre;
-	l = Longitud(nombre);
-	Para pos = l-1 Hasta 0 Con Paso -1 Hacer
-		inversa = inversa + Subcadena(nombre,l,l);
+	nombre=Minusculas(nombre);
+	Para pos=longitud(nombre) Hasta 0 Con Paso -1 Hacer
+		inversa = inversa + Subcadena(nombre,pos,pos);
 	Fin Para
 	Escribir inversa;
-	Si nombre = inversa Entonces
-		Escribir "La palabra es palindroma";
+	Si inversa = nombre Entonces
+		Escribir "La palabra al derecho y al Reves es palindroma";
 	SiNo
-		Escribir "La palabra no es palindoroma";
+		Escribir "No se escribe de igual forma al derecho y al Reves, por lo tanto no es palindroma";
 	FinSi
 FinFuncion
 
@@ -384,70 +417,68 @@ Funcion PosiciondeCaracter()
 			z = z + 1;
 			x = x + 1;
 		finsi
-		hasta que subcadena(frase2,x,x) = subcadena(frase2,l2,l2) 
-		si cont = l2 Entonces
-			escribir "existe en la posicion: ",donde;
-		SiNo
-			escribir "no existe";
-		FinSi
+	hasta que subcadena(frase2,x,x) = subcadena(frase2,l2,l2) 
+	si cont = l2 Entonces
+		escribir "existe en la posicion: ",donde;
+	SiNo
+		escribir "no existe";
+	FinSi
 FinFuncion
 
 ///ARREGLO SUBMENU ARREGLOS 
 //Funcion Dado un arreglo cualquiera ingresarlo y presentarlo
 Funcion ArregloPresentarlo()
-	Definir num, r Como Entero;
-	Dimension num[10];
-	Para r = 1 Hasta 5 Hacer
-		Leer num[r];
-	FinPara
-	Para r = 1 Hasta 5 Hacer
-		Escribir num[r];
-	FinPara
+	Definir frases, nom Como Caracter;
+	Definir letras, i Como Entero;
+	Escribir "Ingrese la cantidad de frases";
+	Leer letras;
+	Dimension frases[letras];
+	Para i <-0 Hasta letras-1 Con Paso 1 Hacer
+		Escribir "Ingrese una frase";
+		leer nom;
+		frases[i] = nom;
+	Fin Para
+	Para i <- 0 Hasta letras-1 Con Paso 1 Hacer
+		Escribir Sin Saltar frases[i], " "; 
+	Fin Para
 FinFuncion
 
 //Funcion Presentar los numeros pares de un arreglo 
 Funcion NumerosParesArreglo()
-	Definir numeros,pos,longitudd,cont, x Como Entero;
-	Dimension numeros[11];
-	pos = 1; longitudd = 10;
-	Escribir "Ingrese valores para el arreglo";
-	Para pos = 1 Hasta Longitudd Con Paso 1 Hacer
-		Leer numeros[pos];
-	FinPara
-	Escribir "Los numeros pares del arreglo son:";
-	Para x = 1 Hasta longitudd Con Paso 1 Hacer
-		Si numeros[x] mod 2 = 0 Entonces
-			Escribir  numeros[x] ","  Sin Saltar;
+	Definir x, cant,n, numerospar,z Como Entero;
+	Escribir "Ingrese la cantidad de arreglos";
+	Leer cant;
+	Dimension x[cant];
+	Para z <- 0 Hasta cant-1  Hacer
+		Escribir "Ingrese un numero";
+		leer n;
+		x[z] = n;
+	Fin Para
+	Para z <- 0 Hasta cant-1 Con Paso 1 Hacer
+		Si x[z] mod 2 = 0 Entonces
+			numerospar = x[z];
+			Escribir " pares : ", numerospar;
 		FinSi
 	Fin Para
 FinFuncion
 
 //Funcion Dado una serie de numeros guardar en un arreglo los numeros negativos 
 Funcion ArregloNumerosNegativos()
-	Definir Num,i,pos,nega,n Como Entero;
-	
-	Escribir 'Ingrese la cantidad de numeros que desea ingresar ';
-	Leer pos;
-	
-	Dimension Num[pos];
-	
-	Para i = 0 Hasta pos-1 Con Paso 1 Hacer
-		
-		Escribir 'Ingrese un numero';
-		Leer N;
-		
-		Num[i] = N;
-		
-	FinPara
-	
-	Para i = 0 Hasta pos-1 Con Paso 1 Hacer
-		
-		si Num[i] < 0 Entonces
-			
-			nega = Num[i];
-			Escribir nega ","  Sin Saltar;
+	Definir num, cantidad,n, negativos, i Como Entero;
+	Escribir "Ingrese la cantidad de arreglos";
+	Leer cantidad;
+	Dimension num[cantidad];
+	Para i <- 0 Hasta cantidad-1 Con Paso 1 Hacer
+		Escribir "Ingrese un numero";
+		leer n;
+		num[i] = n;
+	Fin Para
+	Para i <- 0 Hasta cantidad-1 Con Paso 1 Hacer
+		Si num[i] < 0 Entonces
+			negativos = num[i];
+			Escribir "num[",i,"]: ", negativos;
 		FinSi
-	FinPara
+	Fin Para
 FinFuncion
 
 //Funcion Dado un arreglo de nombres presentar el primer caracter de cada nombre
@@ -482,7 +513,7 @@ Funcion TotalNumerosArreglo()
 		leer num(i);
 		suma = suma + num(i);
 	FinPara
-	prom = suma / canti;
+	prom = trunc(suma / canti);
 	Escribir "La suma de los numeros ingresados dentro del arreglo es " suma;
 	Escribir "La cantidad de numeros dentro del arreglo es de " canti;
 	Escribir "El promedio de los numeros dentro del arreglo es " prom;
@@ -510,18 +541,23 @@ FinFuncion
 
 //Funcion Dado un arreglo presentar el primero,el medio y el ultimo elemento del arreglo
 Funcion PresentarPrimeroMedioUltimo()
-	Escribir "Dado un arreglo presentar el primero,el medio y el ultimo elemento del arreglo";
-	Definir  i ,arreglo Como Entero;
-	Dimension arreglo[5];
-	Escribir "Porfavor, ingrese sus numeros: ";
-	para i = 0 Hasta 5 - 1 Con Paso 1 Hacer
-		Leer arreglo[i];
+	definir cantidad, i Como Entero;
+	Definir primero, ultimo, medio, elementos Como Caracter;
+	escribir "Ingresa la cantidad de valores para el arreglo";
+	leer cantidad;
+	dimension elementos(cantidad);
+	para i=0 hasta cantidad-1 Hacer
+		escribir "Ingresa el valor " i+1;
+		leer elementos(i);
 	FinPara
-	Escribir "lo que contiene los arreglo es [",i,"] es:",arreglo[0];
-	Escribir "lo que contiene los arreglo es [",i,"] es:",arreglo[2];
-	Escribir "lo que contiene los arreglo es [",i,"] es:",arreglo[4];
+	
+	primero=elementos(0);
+	ultimo=elementos(cantidad-1);
+    medio=elementos(trunc(cantidad/2));
+	Escribir "(primero)=",primero;
+	escribir "(medio)=",medio;
+	escribir "(ultimo)=",ultimo;
 FinFuncion
-
 //Funcion Dado un arreglo copiarlo en otro y presentarlo
 Funcion ArregloCopiarlo()
 	Definir numeros1,numeros2,pos,longitudd,cant,arreglo1,arreglo2 Como Entero;
@@ -563,21 +599,34 @@ Funcion DadoDosArreglos()
 FinFuncion
 //Funcion Dado una serie de numeros guarda en un arreglo los factoriales
 Funcion ArregloFactoriales()
-	Definir num,cant,pos,longitudd,fact Como Entero;
-	fact = 1;
-	Escribir "Ingrese la cantidad de los numeros";
-	Leer cant;
-	Dimension num[cant];
-	longitudd = cant-1;
-	Para pos=0 Hasta longitudd Con Paso 1 Hacer
-		Escribir "Ingrese los numeros " ,pos;
-		Leer num[pos];
-	Fin Para
-	Para pos=0 Hasta longitudd Con Paso 1 Hacer
-		fact = fact * num[pos];
-		num[pos] = fact;
-		Escribir num[pos];
-	Fin Para
+	Definir n,x,c, nl,arreglo, cont Como entero;
+	Definir f  Como Real;
+	Escribir "Ingrese la cantidad de numeros que contiene la serie:";
+	Leer nl;
+	Dimension arreglo(100);
+	cont<-1;
+	Escribir "Ingresa los numeros de la serie:";
+	Mientras cont<=nl Hacer
+		Leer n;
+		Si n>=0 Entonces
+			f<-1;
+			c<-1;
+			Mientras c<=n Hacer
+				f<-(f*c);
+				c<-c+1;
+			FinMientras
+		SiNo
+			Escribir "No se puede calcular el factorial de: ",n;
+		FinSi
+		arreglo(cont)<-f;
+		cont<-cont+1;
+	FinMientras
+	Escribir "Los factoriales de cada numero son: ";
+	cont<-1;
+	Mientras cont<=nl Hacer
+		Escribir "Arreglo [",cont,"]:",arreglo(cont);
+		cont<-cont+1;
+	FinMientras
 FinFuncion
 
 /// Algoritmo principal del proyecto
