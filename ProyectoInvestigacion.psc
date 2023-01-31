@@ -189,6 +189,7 @@ Funcion Caracterporcaracter()
 	l = Longitud(frase) -1;
 	Para pos = 0 Hasta l Con Paso 1 Hacer
 		Escribir Subcadena(frase,pos,pos) Sin Saltar;
+		Esperar 1 Segundo 
 	Fin Para
 FinFuncion
 
