@@ -74,6 +74,7 @@ FinFuncion
 //salida contador de numeros pares y contador de multiplos de 5
 //ejemplo [2,5,10,8,7,30,4,15,11,22] Numeros pares= 5, multiplos de 5=4
 Funcion sumaparesproductomultiplos5()
+<<<<<<< HEAD
 	definir sumapares, multiplos, n, num, i Como real;
 	sumapares=0;
 	multiplos=1;
@@ -131,6 +132,65 @@ Funcion sacarivaytotal()
 			iva=(precio-descuento)*0.12;
 			preciofinal=(precio-descuento)+iva;
 			Escribir "El costo del traje " x " es " precio "   su  descuento  es " iva " el precio final es ",preciofinal;
+=======
+	definir sumapares, multiplos, n, num, i Como real
+	sumapares=0
+	multiplos=1
+	num=1
+	escribir "cantidad de la  serie"
+	leer n
+	Para i=1 Hasta n Con Paso 1 Hacer
+		Escribir "Ingresa un numero"
+		leer num 
+		si num mod 2=0 Entonces
+			sumapares=sumapares+num
+		SiNo
+			si num mod 5=0 Entonces
+				multiplos=multiplos*num
+			FinSi
+		FinSi
+	fin para
+	escribir "La suma de pares es " sumapares
+	escribir "El producto de multiplos de 5 es " multiplos
+FinFuncion
+//Funcion cantidad de digitos de numeros hasta leer 0
+Funcion cantidaddenumeros()
+	definir digitos,num,divisor,div como real
+	digitos=0
+	num=1
+	divisor=0
+	mientras num<>0 Hacer
+		Escribir "Ingresa un numero"
+		leer num
+		si num<>0 Entonces
+			divisor=num
+			Repetir
+				divisor=trunc(div/10)
+				digitos=digitos+1
+			hasta Que divisor=0
+		fin si
+	fin mientras
+	Escribir "La suma de digitos de todos los numeros es " digitos	
+FinFuncion
+//Funcion sacar iva y total
+Funcion sacarivaytotal()
+	definir iva, precio, descuento,x,preciofinal,ntrajes,i Como Real
+	escribir "Ingresa la cantidad de trajes comprados"
+	leer ntrajes
+	Para x<-1 Hasta ntrajes Hacer
+		Escribir "Ingrese le precio del traje " i
+		leer precio
+		Si precio>100 Entonces
+			descuento=precio*0.10
+			iva=(precio-descuento)*0.12
+			preciofinal=(precio-descuento)+iva
+			Escribir "El costo del traje " x " es " precio "   su  descuento  es " iva " el precio final es ",preciofinal
+		SiNo
+			descuento=precio*0.05
+			iva=(precio-descuento)*0.12
+			preciofinal=(precio-descuento)+iva
+			Escribir "El costo del traje " x " es " precio "   su  descuento  es " iva " el precio final es ",preciofinal
+>>>>>>> ac050c1a779403e5daef3f2d16f7ca5425bc6008
 		finsi
 	Fin Para
 FinFuncion
@@ -376,7 +436,11 @@ Funcion PalabraPalindroma()
 	Definir pos Como Entero;
 	Escribir "Ingresar un nombre";
 	Leer nombre;
+<<<<<<< HEAD
 	nombre=Minusculas(nombre);
+=======
+	nombre=Minusculas(nombre)
+>>>>>>> ac050c1a779403e5daef3f2d16f7ca5425bc6008
 	Para pos=longitud(nombre) Hasta 0 Con Paso -1 Hacer
 		inversa = inversa + Subcadena(nombre,pos,pos);
 	Fin Para
@@ -436,7 +500,11 @@ Funcion ArregloPresentarlo()
 	Para i <-0 Hasta letras-1 Con Paso 1 Hacer
 		Escribir "Ingrese una frase";
 		leer nom;
+<<<<<<< HEAD
 		frases[i] = nom;
+=======
+		frases[i] = nom
+>>>>>>> ac050c1a779403e5daef3f2d16f7ca5425bc6008
 	Fin Para
 	Para i <- 0 Hasta letras-1 Con Paso 1 Hacer
 		Escribir Sin Saltar frases[i], " "; 
@@ -476,7 +544,11 @@ Funcion ArregloNumerosNegativos()
 	Para i <- 0 Hasta cantidad-1 Con Paso 1 Hacer
 		Si num[i] < 0 Entonces
 			negativos = num[i];
+<<<<<<< HEAD
 			Escribir "num[",i,"]: ", negativos;
+=======
+			Escribir "num[",i,"]: ", negativos
+>>>>>>> ac050c1a779403e5daef3f2d16f7ca5425bc6008
 		FinSi
 	Fin Para
 FinFuncion
@@ -541,6 +613,7 @@ FinFuncion
 
 //Funcion Dado un arreglo presentar el primero,el medio y el ultimo elemento del arreglo
 Funcion PresentarPrimeroMedioUltimo()
+<<<<<<< HEAD
 	definir cantidad, i Como Entero;
 	Definir primero, ultimo, medio, elementos Como Caracter;
 	escribir "Ingresa la cantidad de valores para el arreglo";
@@ -557,6 +630,24 @@ Funcion PresentarPrimeroMedioUltimo()
 	Escribir "(primero)=",primero;
 	escribir "(medio)=",medio;
 	escribir "(ultimo)=",ultimo;
+=======
+	definir cantidad, i Como Entero
+	Definir primero, ultimo, medio, elementos Como Caracter
+	escribir "Ingresa la cantidad de valores para el arreglo"
+	leer cantidad
+	dimension elementos(cantidad)
+	para i=0 hasta cantidad-1 Hacer
+		escribir "Ingresa el valor " i+1
+		leer elementos(i)
+	FinPara
+	
+	primero=elementos(0)
+	ultimo=elementos(cantidad-1)
+    medio=elementos(trunc(cantidad/2))
+	Escribir "(primero)=",primero
+	escribir "(medio)=",medio
+	escribir "(ultimo)=",ultimo
+>>>>>>> ac050c1a779403e5daef3f2d16f7ca5425bc6008
 FinFuncion
 //Funcion Dado un arreglo copiarlo en otro y presentarlo
 Funcion ArregloCopiarlo()
@@ -890,4 +981,9 @@ Algoritmo Proyecto
 				Esperar 3 Segundos;
 		Fin Segun
     Fin Mientras
+<<<<<<< HEAD
 FinAlgoritmo
+=======
+FinAlgoritmo
+
+>>>>>>> ac050c1a779403e5daef3f2d16f7ca5425bc6008
